@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "t_advertiser")
-public class Advertiser  {
+public class Advertiser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,23 +13,33 @@ public class Advertiser  {
 
     private String advertiser_name;
 
-    private String  phone_number;
+    private String phone_number;
 
-    public Advertiser(){
+
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Advertiser(long id, String advertiser_name,String phone_number){
-        this.id=id;
-        this.advertiser_name=advertiser_name;
-        this.phone_number=phone_number;
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+  // public Collection<Company> getCompanies() {
+  //      return companies;
+  //  }
+
+//    public void setCompanies(Collection<Company> companies) {
+//        this.companies = companies;
+ //   }
+
+    public Advertiser() {
+    }
+
+    public Advertiser(Long id, String advertiser_name, String phone_number) {
         this.id = id;
+        this.advertiser_name = advertiser_name;
+        this.phone_number = phone_number;
     }
 
     public String getAdvertiser_name() {
