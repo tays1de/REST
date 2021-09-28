@@ -9,6 +9,7 @@
 <title>New Customer</title>
 </head>
 <body>
+<a href="/news">Назад</a>
     <div align="center">
         <h2>New Advertiser</h2>
         <form:form action="save" method="post" modelAttribute="advertiser">

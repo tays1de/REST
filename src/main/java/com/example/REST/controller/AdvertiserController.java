@@ -24,9 +24,9 @@ public class AdvertiserController {
     }
 
     @GetMapping("/news/delete")
-    public String deleteAdvertiser(@RequestParam Long id) {
+    public String deleteAdvertiser(@RequestParam long id) {
         advertiserService.delete(id);
-        return "redirect:/news";
+        return "redirect:/campaigns";
     }
 
     @GetMapping("/news/new")
@@ -57,5 +57,7 @@ public class AdvertiserController {
         model.addAttribute("advertiser", advertiser);
         return "edit_advertiser";
     }
+
+
 
 }

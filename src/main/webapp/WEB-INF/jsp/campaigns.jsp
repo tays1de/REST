@@ -14,11 +14,7 @@
 <a href="/news">Назад</a>
 <div align="center">
     <h2>Customer Manager</h2>
-    <form method="get" action="search">
-        <input type="text" name="keyword" />
-        <input type="submit" value="Search" />
-    </form>
-    <h3><a href="/news/new_company">New Company</a></h3>
+      <h3><a href="/news/campaigns/new/${advertiser_id}">New Company</a></h3>
    <table border="1" cellpadding="5">
            <tr>
                <th>ID</th>
@@ -38,8 +34,8 @@
                <th>${plz.language}</th>
                <th>${plz.location}</th>
                <td>
-                   <a href="/news/edit?id=${advertiser.id}">Edit</a>
-                   <a href="/news/delete?id=${advertiser.id}">Delete</a>
+                   <a href="/news/campaigns/edit/${plz.id}">Edit</a>
+                   <a href="/news/campaigns/delete/${plz.id}">Delete</a>
                </td>
            </tr>
            </c:forEach>

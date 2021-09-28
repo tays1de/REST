@@ -2,6 +2,7 @@ package com.example.REST.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,6 +13,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min=1, message = "Название компании не должно быть null")
     private String campaigns_name;
 
     private String  link_on_photo;
@@ -22,7 +24,7 @@ public class Company {
 
     private String location;
 
-    @ManyToOne(optional = false,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "advertiser_id")
     private Advertiser advertisers;
 

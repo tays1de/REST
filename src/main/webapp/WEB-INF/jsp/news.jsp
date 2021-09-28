@@ -12,11 +12,8 @@
 <a href="/">Главная</a>
 <div align="center">
     <h2>Customer Manager</h2>
-    <form method="get" action="search">
-        <input type="text" name="keyword" />
-        <input type="submit" value="Search" />
-    </form>
-    <h3><a href="/news/new">New Customer</a></h3>
+
+    <h3><a href="/news/new">New Advertiser</a></h3>
     <table border="1" cellpadding="5">
         <tr>
             <th>ID</th>
