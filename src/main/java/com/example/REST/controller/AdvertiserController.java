@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -26,7 +29,7 @@ public class AdvertiserController {
     @GetMapping("/news/delete")
     public String deleteAdvertiser(@RequestParam long id) {
         advertiserService.delete(id);
-        return "redirect:/campaigns";
+        return "redirect:/news";
     }
 
     @GetMapping("/news/new")
@@ -36,9 +39,10 @@ public class AdvertiserController {
         return "new_advertiser";
     }
 
-    @PostMapping("/news/save")
+
+
+  @PostMapping("/news/save")
     public String saveNewAdvertiser(@ModelAttribute("customer") Advertiser advertiser) {
-        advertiser.setId((long) (advertiserService.listAll().size() + 1));
         advertiserService.save(advertiser);
         return "redirect:/news";
     }

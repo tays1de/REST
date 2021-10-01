@@ -30,7 +30,8 @@ public class Company {
 
     public Company(){}
 
-    public Company(Long id, String campaigns_name, String link_on_photo, String target_countries, String language, String location, Advertiser advertisers) {
+    public Company(Long id, String campaigns_name, String link_on_photo,
+                   String target_countries, String language, String location, Advertiser advertisers) {
         this.id = id;
         this.campaigns_name = campaigns_name;
         this.link_on_photo = link_on_photo;

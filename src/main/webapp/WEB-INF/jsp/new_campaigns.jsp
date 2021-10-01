@@ -11,7 +11,7 @@
 <body>
 <a href="/news">Назад</a>
     <div align="center">
-        <h2>New Advertiser</h2>
+        <h2>New Company</h2>
         <form:form action="save" method="post" modelAttribute="company">
               <table border="0" cellpadding="5">
           <tr>
@@ -42,7 +42,7 @@
           </tr>
           <tr>
               <td>Advertiser id</td>
-              <td>${company.advertisers}
+              <td>${company.advertisers.getId()}
                    <form:hidden path="advertisers"/>
               </td>
 

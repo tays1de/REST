@@ -19,18 +19,16 @@
             <th>ID</th>
             <th>Advertiser_name</th>
             <th>Phone_number</th>
-            <th>Action</th>
         </tr>
         <c:forEach items="${advertiserList}" var="advertiser">
         <tr>
             <td>${advertiser.id}</td>
             <td>${advertiser.advertiser_name}</td>
             <td>${advertiser.phone_number}</td>
-            <td>
-                <a href="/news/edit?id=${advertiser.id}">Edit</a>
-                <a href="/news/delete?id=${advertiser.id}">Delete</a>
-                <a href="/news/campaigns/${advertiser.id}">Compaigns of advertiser</a>
-            </td>
+            <td>    <a href="/news/edit?id=${advertiser.id}">Edit</a> </td>
+            <td>    <a href="/news/delete?id=${advertiser.id}">Delete</a> </td>
+            <td>    <a href="/news/campaigns/${advertiser.id}">Compaigns of advertiser</a> </td>
+            <td>    <a href="/news/advercomp/${advertiser.id}">Advertising company</a> </td>
         </tr>
         </c:forEach>
     </table>

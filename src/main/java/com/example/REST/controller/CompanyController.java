@@ -1,7 +1,6 @@
 package com.example.REST.controller;
 
 
-import com.example.REST.entity.Advertiser;
 import com.example.REST.entity.Company;
 import com.example.REST.service.AdvertiserService;
 import com.example.REST.service.CompanyService;

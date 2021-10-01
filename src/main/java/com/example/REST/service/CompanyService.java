@@ -16,6 +16,8 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
+
+
     public void save(Company company) {
         companyRepository.save(company);
     }
@@ -35,7 +37,6 @@ public class CompanyService {
         }
         return result;
     }
-
 
     public Company get(Long id) {
         return companyRepository.findById(id).get();
