@@ -16,18 +16,26 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
-
-
     public void save(Company company) {
         companyRepository.save(company);
     }
 
     public List<Company> listAll() {
-        return (List<Company>) companyRepository.findAll();
+        List<Company> companyList = (List<Company>) companyRepository.findAll();
+
+        companyList.removeIf(Company::isDelete);
+
+        return companyList;
+    }
+
+    public void softDelete(Long id){
+        Company company = companyRepository.findById(id).get();
+        company.setDelete(true);
+        companyRepository.save(company);
     }
 
     public List<Company> listOfAdverister(Long adverister_id) {
-        List<Company> companyList = (List<Company>) companyRepository.findAll();
+        List<Company> companyList = listAll();
         List<Company> result = new ArrayList<>();
         for (Company company :
                 companyList) {

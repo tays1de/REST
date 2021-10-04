@@ -1,5 +1,6 @@
 package com.example.REST.controller;
 
+import com.example.REST.entity.User;
 import com.example.REST.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 @Controller
 public class AdminController {
     @Autowired
@@ -21,18 +23,19 @@ public class AdminController {
     }
 
     @PostMapping("/admin")
-    public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
-                              @RequestParam(required = true, defaultValue = "" ) String action,
-                              Model model) {
-        if (action.equals("delete")){
+    public String deleteUser(@RequestParam(required = true, defaultValue = "") Long userId,
+                             @RequestParam(required = true, defaultValue = "") String action,
+                             Model model) {
+        if (action.equals("delete")) {
             userService.deleteUser(userId);
         }
         return "redirect:/admin";
     }
 
     @GetMapping("/admin/gt/{userId}")
-    public String  gtUser(@PathVariable("userId") Long userId, Model model) {
-        model.addAttribute("allUsers", userService.usergtList(userId));
+    public String gtUser(@PathVariable("userId") Long userId, Model model) {
+        List<User> userList = userService.usergtList(userId);
+        model.addAttribute("allUsers", userList);
         return "admin";
     }
 }

@@ -30,7 +30,7 @@ public class CompanyController {
 
     @GetMapping("/news/campaigns/delete/{id}")
     public String deleteCampaign(@PathVariable(value = "id") long id) {
-        companyService.delete(id);
+        companyService.softDelete(id);
         return "redirect:/news";
     }
 

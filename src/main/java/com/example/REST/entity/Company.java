@@ -24,6 +24,8 @@ public class Company {
 
     private String location;
 
+    private boolean isDelete;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "advertiser_id")
     private Advertiser advertisers;
@@ -31,14 +33,23 @@ public class Company {
     public Company(){}
 
     public Company(Long id, String campaigns_name, String link_on_photo,
-                   String target_countries, String language, String location, Advertiser advertisers) {
+                   String target_countries, String language, String location,boolean isDelete, Advertiser advertisers) {
         this.id = id;
         this.campaigns_name = campaigns_name;
         this.link_on_photo = link_on_photo;
         this.target_countries = target_countries;
         this.language = language;
         this.location = location;
+        this.isDelete=isDelete;
         this.advertisers = advertisers;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
     }
 
     @Override

@@ -1,38 +1,39 @@
-create table t_advertiser (
+create table if not exists t_advertiser (
     id  bigserial not null,
     advertiser_name varchar(255),
     phone_number varchar(255),
     primary key (id));
 
-create table t_advertiser_company (
+create table if not exists t_advertiser_company (
         id  bigserial not null,
         link_for_presentation varchar(255),
         advertiser_id int8,
         primary key (id));
 
-create table t_campaigns (
+create table if not exists t_campaigns (
     id  bigserial not null,
     campaigns_name varchar(255),
     language varchar(255),
     link_on_photo varchar(255),
     location varchar(255),
     target_countries varchar(255),
+    is_delete boolean default false,
     advertiser_id int8,
     primary key (id));
 
 
-create table t_role (
+create table if not exists t_role (
     id int8 not null,
     name varchar(255),
     primary key (id));
 
-create table t_user (
+create table if not exists t_user (
     id  bigserial not null,
     password varchar(255),
     username varchar(255),
     primary key (id));
 
-create table t_user_roles (
+create table if not exists t_user_roles (
     user_id int8 not null,
     roles_id int8 not null,
     primary key (user_id, roles_id));
