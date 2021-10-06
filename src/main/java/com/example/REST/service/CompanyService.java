@@ -20,6 +20,12 @@ public class CompanyService {
         companyRepository.save(company);
     }
 
+
+/*    public Page<Company> findPaginate(int pageNo, int pageSize){
+        Pageable pageable = PageRequest.of(pageNo-1, pageSize);
+        return this.companyRepository.findAll(pageable);
+    }
+*/
     public List<Company> listAll() {
         List<Company> companyList = (List<Company>) companyRepository.findAll();
 
@@ -35,7 +41,7 @@ public class CompanyService {
     }
 
     public List<Company> listOfAdverister(Long adverister_id) {
-        List<Company> companyList = listAll();
+        List<Company> companyList = (List<Company>) companyRepository.findAll();
         List<Company> result = new ArrayList<>();
         for (Company company :
                 companyList) {

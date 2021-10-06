@@ -11,9 +11,11 @@ public class Advertiser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String advertiser_name;
+    @Column(name= "advertiser_name")
+    private String advertiserName;
 
-    private String phone_number;
+    @Column(name="phone_number")
+    private String phoneNumber;
 
 
 
@@ -38,32 +40,32 @@ public class Advertiser {
 
     public Advertiser(Long id, String advertiser_name, String phone_number) {
         this.id = id;
-        this.advertiser_name = advertiser_name;
-        this.phone_number = phone_number;
+        this.advertiserName = advertiser_name;
+        this.phoneNumber = phone_number;
     }
 
     public String getAdvertiser_name() {
-        return advertiser_name;
+        return advertiserName;
     }
 
     public void setAdvertiser_name(String advertiser_name) {
-        this.advertiser_name = advertiser_name;
+        this.advertiserName = advertiser_name;
     }
 
     public String getPhone_number() {
-        return phone_number;
+        return phoneNumber;
     }
 
     public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+        this.phoneNumber = phone_number;
     }
 
     @Override
     public String toString() {
         return "Advertiser{" +
                 "id=" + id +
-                ", advertiser_name='" + advertiser_name + '\'' +
-                ", phone_number='" + phone_number + '\'' +
+                ", advertiser_name='" + advertiserName + '\'' +
+                ", phone_number='" + phoneNumber + '\'' +
                 '}';
     }
 }
